@@ -1,5 +1,5 @@
 /**
- * This is where we import the require libraries.
+ * This is where we import the required libraries.
  */
 import { useEffect, useMemo, useState } from "react";
 import maplibregl, {
@@ -174,7 +174,7 @@ async function populateMarkers(
             .setLngLat(coordinates)
             .setHTML(`<strong style='color:black;'>${stationName}</strong>`)
             .addTo(map);
-          // update the state with the data clicked and show on the sidebar.
+          // update the state with the data clicked and display on the sidebar.
           const stationInfo = await getMarkerAQI(uid);
           setSelectedStationInfo(stationInfo?.data);
         });
@@ -280,10 +280,10 @@ function App() {
   const [selectedStationInfo, setSelectedStationInfo] =
     useState<null | TSelectedStation>(null);
   const [activePollutant, setActivePollutant] = useState<string>("");
-  // To Load the Map
+  // This useEffect is used to load the map
   useEffect(() => {
     if (map) return;
-    // This is used to initialize the map. The library used here is Maplibre GL JS (https://maplibre.org).
+    // This is used to initialize the map and also update the state with the initialized map. The library used here is Maplibre GL JS (https://maplibre.org).
     setMap(
       new maplibregl.Map({
         container: "map",
