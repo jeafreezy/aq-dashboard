@@ -29,7 +29,6 @@ const WORLD_AIR_QUALITY_API_TOKEN: string =
 /**
  * This is a Typescript type for a single station.
  */
-
 type TStation = {
   uid: string;
   aqi: string;
@@ -102,7 +101,6 @@ async function populateMarkers(
         const source = map.getSource("stations") as maplibregl.GeoJSONSource;
         source.setData(geoJSON);
       } else {
-
         map.addSource("stations", {
           type: "geojson",
           data: geoJSON,
@@ -292,7 +290,7 @@ function App() {
         style:
           "https://tiles.basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json", // The url to the style i.e basemap that is displayed.
         center: [20.11, 49.35], // The center of the map around Europe.
-        zoom: 10, // The zoom level of the map.
+        zoom: 4, // The zoom level of the map.
       })
         .addControl(
           // To zoom in and out.
@@ -545,7 +543,7 @@ function App() {
   return (
     <main className="bg-black text-white">
       <header className="h-14 flex items-center px-6 ">
-        <p>My Air Quality Monitoring Dashboard</p>
+        <p>Global Real-Time Air Quality Monitoring Dashboard</p>
       </header>
       <div className="w-full h-screen grid grid-cols-9">
         {/* This is the sidebar where the information about the air quality is presented.*/}
