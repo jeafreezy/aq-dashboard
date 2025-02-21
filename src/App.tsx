@@ -349,13 +349,13 @@ function App() {
   useEffect(() => {
     if (!selectedStationInfo?.forecast) return;
     if (activePollutant !== "") return;
-    if (selectedStationInfo.forecast.daily.no2) {
+    if (selectedStationInfo.forecast.daily?.no2) {
       setActivePollutant("no2");
-    } else if (selectedStationInfo.forecast.daily.pm10) {
+    } else if (selectedStationInfo.forecast.daily?.pm10) {
       setActivePollutant("pm10");
-    } else if (selectedStationInfo.forecast.daily.pm25) {
+    } else if (selectedStationInfo.forecast.daily?.pm25) {
       setActivePollutant("pm25");
-    } else if (selectedStationInfo.forecast.daily.o3) {
+    } else if (selectedStationInfo.forecast.daily?.o3) {
       setActivePollutant("o3");
     }
   }, [selectedStationInfo?.forecast, activePollutant]);
